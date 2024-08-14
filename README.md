@@ -1,0 +1,2 @@
+# BitCalculationTool
+Bid Calculation Tool
