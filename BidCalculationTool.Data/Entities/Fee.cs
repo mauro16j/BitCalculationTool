@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BidCalculationTool.Data.Entities;
 
+//Todo: Implement VehicleType Entity
 public class Fee
 {
 }

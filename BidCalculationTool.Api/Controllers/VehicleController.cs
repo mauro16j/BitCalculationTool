@@ -1,4 +1,5 @@
-﻿using BidCalculationTool.Services.Interfaces;
+﻿using BidCalculationTool.Models.Enum;
+using BidCalculationTool.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BidCalculationTool.Api.Controllers
@@ -15,7 +16,7 @@ namespace BidCalculationTool.Api.Controllers
             if (basePrice < 0) {
                 return BadRequest("Base price must be greater than 0");
             }
-            var result = calculationService.CalculateVehicleFees(basePrice, type);
+            var result = calculationService.CalculateVehicleFees(basePrice, (Vehicle)type);
             return Ok(result);
         }
 

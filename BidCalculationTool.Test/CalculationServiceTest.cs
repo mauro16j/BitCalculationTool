@@ -1,3 +1,4 @@
+using BidCalculationTool.Models.Enum;
 using BidCalculationTool.Services;
 
 namespace BidCalculationTool.Test
@@ -21,10 +22,22 @@ namespace BidCalculationTool.Test
         public void CalculateTaxes_ShouldReturnExpectedTotal(decimal price, int type, decimal expectedTotal)
         {
             // Act  
-            var result = _calculationService.CalculateTaxes(price, type);
+            var result = _calculationService.CalculateVehicleFees(price, (Vehicle)type);
 
             // Assert
-            Assert.Equal(expectedTotal, result);
+            Assert.Equal(expectedTotal, result.Total);
+        }
+        [Fact]
+        public void CalculateTaxes_ShouldThrowBadRequest_WhenPriceIsNotGreaterThanZero()
+        {
+            // Arrange
+            decimal price = 0;
+            int type = 1;
+
+            // Act  
+
+            // Assert
+            Assert.Throws<ArgumentException>(() => _calculationService.CalculateVehicleFees(price, (Vehicle)type));
         }
     }
 }
