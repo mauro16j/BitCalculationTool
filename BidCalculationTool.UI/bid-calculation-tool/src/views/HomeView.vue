@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import CalculateTaxes from '../components/CalculateTaxes.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <CalculateTaxes />
   </main>
 </template>
